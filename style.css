@@ -233,7 +233,7 @@ h2 {
 /* Each product item in the grid */
 .product-item {
   text-align: center;
-  margin: 0 15px 0 15px;
+  margin: 0 0.9rem 0 0.9rem;
   transition: 0.5s;
 }
 
