@@ -1,0 +1,354 @@
+/* Import Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap");
+
+/* Innehållsförteckning 
+1. Root element (färger)
+2. Html + Body
+3. Navbar
+4. Hero
+5. Locations
+6. Products
+7. About Us
+8. Footer
+
+*/
+
+/* 1. Root Element */
+/* Colors */
+* {
+  --white: #fff;
+  --black: #000;
+  --blue: #0071b9;
+  --light-blue: #32a5cd;
+  --dark-green: #133023;
+}
+
+/* 2. Html + Body */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--dark-green);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* 3. Navbar */
+a,
+h1 {
+  color: var(--white);
+  font-family: "Oswald", sans serifs;
+}
+
+/* Navigation */
+#navigation {
+  background-color: var(--black);
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+}
+
+/* Navigation list */
+#navigation ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: var(--black);
+}
+
+#navigation li a {
+  display: block;
+  padding: 1.25rem 1.25rem;
+  border-right: 1px solid var(--white);
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+}
+
+/* Navigation list hover */
+#navigation li a:hover,
+#navigation .menu-btn:hover {
+  color: var(--blue);
+}
+
+#navigation .logo {
+  display: block;
+  float: left;
+  font-size: 1.6em;
+  padding: .625rem 1.25rem;
+  text-decoration: none;
+}
+
+/* Menu */
+#navigation .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height 0.3s ease-out;
+}
+
+/* Menu icon */
+#navigation .menu-icon {
+  cursor: pointer;
+  float: right;
+  padding: 1.75rem 1.25rem;
+  position: relative;
+}
+
+#navigation .menu-icon .navicon {
+  background: var(--white);
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: 0.3s ease-out;
+  width: 1.125rem;
+}
+
+/* insert content with before and after */
+#navigation .menu-icon .navicon:before,
+#navigation .menu-icon .navicon:after {
+  background: var(--white);
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.3s ease-out;
+  width: 100%;
+}
+
+#navigation .menu-icon .navicon:before {
+  top: 5px;
+}
+
+#navigation .menu-icon .navicon:after {
+  top: -5px;
+}
+
+/* Menu button */
+
+#navigation .menu-btn {
+  display: none;
+}
+
+#navigation .menu-btn:checked ~ .menu {
+  max-height: 15rem;
+}
+
+#navigation .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+#navigation .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+#navigation .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+#navigation .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+#navigation .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+/* Validated OK */
+
+/* 4. Hero  */
+.hero-element {
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+  background-image: url("img/hero-image.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* 5. Locations */
+.locations {
+  width: auto;
+  display: grid;
+  gap: 0;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto;
+}
+
+.locations div {
+  padding: 3rem;
+  background-color: var(--black);
+  color: var(--white);
+  opacity: 0.8;
+  text-align: center;
+}
+
+.locations h3 {
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  transition: 0.3s ease-in-out;
+}
+
+.locations h3:hover {
+  color: var(--light-blue);
+}
+
+/* For Mobile */
+@media screen and (max-width: 450px) {
+  .locations {
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+  }
+}
+
+/* For Ipad */
+@media screen and (min-width: 500px) and (max-width: 1000px) {
+  .locations {
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+  }
+}
+
+/* Validated OK */
+
+/* 6. Products */
+
+.product-section {
+  margin: 5vh auto 20vh auto;
+  width: 80%;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(4, auto);
+  grid-template-rows: auto auto;
+}
+
+/* All h2 elements */
+h2 {
+  margin: 20vh auto auto auto;
+  font-family: "Oswald", sans-serif;
+  text-align: center;
+  color: var(--white);
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+/* Each product item in the grid */
+.product-item {
+  text-align: center;
+  margin: 0 15px 0 15px;
+  transition: 0.5s;
+}
+
+/* Make each product slightly larger when hover is active */
+.product-item:hover {
+  transform: scale(1.2);
+}
+
+.product-item h4 {
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: var(--white);
+}
+
+.product-item img {
+  width: 100%;
+  border-radius: 10px;
+  margin: 0;
+  max-height: 70vh;
+}
+
+/* For Mobile */
+@media screen and (max-width: 450px) {
+  .product-section {
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+  }
+
+  .hero-element h1 {
+    padding: 1rem;
+    height: 50vh;
+  }
+}
+
+/* For Ipad */
+@media screen and (min-width: 500px) and (max-width: 1000px) {
+  .product-section {
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+  }
+}
+
+/* Validated OK */
+
+/* 7. About Us */
+.about-us {
+  margin: auto;
+  padding: 1.5rem;
+  width: 80%;
+}
+
+.about-us h3 {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.5rem;
+  color: var(--white);
+}
+
+.about-us p {
+  font-family: Arial;
+  color: var(--white);
+}
+
+
+/* For Mobile */
+@media screen and (max-width: 450px) {
+  .about-us {
+    width: 90%;
+    text-align: center;
+  }
+
+  .about-us h3 {
+    font-size: 1.5rem;
+  }
+
+  .about-us p {
+    font-size: 1.1rem;
+  }
+}
+
+/* For Ipad */
+@media screen and (min-width: 500px) and (max-width: 1000px) {
+  .about-us {
+    width: 100%;
+  }
+
+  .about-us h3 {
+    font-size: 3rem;
+  }
+
+  .about-us p {
+    font-size: 1.5rem;
+  }
+}
+
+/* Validated OK */
+
+/* 8. Footer */
+#footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 2.5vh 0 0 0;
+  padding: 1.2rem;
+  background-color: var(--black);
+}
+
+#footer a {
+  color: var(--white);
+  font-family: "Oswald", sans serif;
+  text-decoration: none;
+}
+
+#footer h3 {
+  color: var(--white);
+  font-family: "Oswald", sans serifs;
+}
+
+/* Everything Validated OK */
