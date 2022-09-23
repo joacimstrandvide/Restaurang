@@ -263,10 +263,6 @@ h2 {
     grid-template-rows: auto;
   }
 
-  .hero-element h1 {
-    padding: 1rem;
-    height: 50vh;
-  }
 }
 
 /* For Ipad */
