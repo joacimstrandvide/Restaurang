@@ -2,4 +2,4 @@
 
 En hemsida för en hamburge kedja
 
-<img src="Screenshot.PNG" alt="Screenshot" title="Screenshot">
+<img src="Screenshot.png" alt="Screenshot" title="Screenshot">
